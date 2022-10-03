@@ -1,5 +1,6 @@
 package com.codingmatemoon.book.springboot.config.auth;
 
+import com.codingmatemoon.book.springboot.config.auth.dto.OAuthAttributes;
 import com.codingmatemoon.book.springboot.domain.user.User;
 import com.codingmatemoon.book.springboot.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
