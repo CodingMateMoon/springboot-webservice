@@ -1,6 +1,7 @@
 package com.codingmatemoon.book.springboot.config.auth;
 
 import com.codingmatemoon.book.springboot.config.auth.dto.OAuthAttributes;
+import com.codingmatemoon.book.springboot.config.auth.dto.SessionUser;
 import com.codingmatemoon.book.springboot.domain.user.User;
 import com.codingmatemoon.book.springboot.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -40,7 +41,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
     }
 
     private User saveOrUpdate(OAuthAttributes attributes) {
-        User user = userRepository.findByEmail(attributes.getMail())
+        User user = userRepository.findByEmail(attributes.getEmail())
                 .map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
                 .orElse(attributes.toEntity());
 
